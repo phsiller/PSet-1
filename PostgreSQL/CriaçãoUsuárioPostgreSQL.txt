@@ -1,0 +1,3 @@
+su - postgres
+create user phsiller with encrypted password '212530';
+grant all privileges on database uvv to phsiller;
