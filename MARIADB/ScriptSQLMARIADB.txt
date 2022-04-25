@@ -11,8 +11,8 @@ CREATE TABLE funcionarios (
                 cpf_supervisor CHAR(11) COMMENT CPF do supervisor desse funcionário',
                 numero_departamento INT NOT NULL COMMENT 'Número do departamento em que o funcionário trabalha',
                 PRIMARY KEY (cpf)
-)COMMENT = 'Tabela que contém os dados dos funcionários'
-;
+)COMMENT = 'Tabela que contém os dados dos funcionários';
+
 
 
 /* CRIANDO A TABELA DE DEPARTAMENTO */
@@ -61,12 +61,6 @@ CREATE TABLE dependente (
                 horas DECIMAL (3,1) NOT NULL COMMENT 'Carga horária de trabalho do funcionário',
                 PRIMARY KEY (cpf_funcionario, numero_projeto)
 )COMMENT = 'Tabela contendo informações sobre o funcionário e o projeto em que trabalha';
-COMMENT ON TABLE dependente IS ;
-COMMENT ON COLUMN dependente.cpf_funcionario IS ;
-COMMENT ON COLUMN dependente.nome_dependente IS ;
-COMMENT ON COLUMN dependente.sexo IS ;
-COMMENT ON COLUMN dependente.data_nascimento IS ;
-COMMENT ON COLUMN dependente.parentesco IS ;
 
 
 /* CRIANDO RESTRIÇÕES PARA CHAVES PRIMÁRIAS E ESTRANGEIRAS */
