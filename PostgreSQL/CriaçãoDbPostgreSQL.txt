@@ -1,4 +1,8 @@
+/* Criando o banco de dados 'uvv' pelo usuário do Postgres. */
 CREATE DATABASE uvv WITH OWNER = phsiller TEMPLATE = template0 ENCODING = UTF8 LC_COLLATE = 'pt_BR.UTF-8' LC_CTYPE = 'pt_BR.UTF-8' ALLOW_CONNECTIONS = true;
+
+/* Logar no usuário 'phsiller' e com a senha '212530' para a criação do schema. */
 CREATE SCHEMA elmasri;
 ALTER USER phsiller
 SET SEARCH_PATH TO elmasri, "$user", public;
+/* siga para a criação das tabelas */
