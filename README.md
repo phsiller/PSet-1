@@ -1,5 +1,5 @@
 # Conteúdo do Trabalho: PSet-1
-Todo o trabalho foi feito por mim, Pedro Henrique Siller Gratz, com ajuda de sites de ajuda, blogs e fóruns
+Todo o trabalho foi feito por mim, Pedro Henrique Siller Gratz, com ajuda de sites de ajuda, blogs e fóruns.
 
 ## Informações dos arquivos
 ### PostgreSQL:
