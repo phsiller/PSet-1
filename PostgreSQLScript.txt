@@ -1,28 +1,28 @@
 /* script para a criação da tabela "funcionários" e comentários */
 CREATE TABLE funcionarios (
                 cpf CHAR(11) NOT NULL,
-                primeiro_nome VARCHAR (15) NOT NULL,
+                primeiro_nome VARCHAR(15) NOT NULL,
                 nome_meio CHAR(1),
-                ultimo_nome VARCHAR (15) NOT NULL,
+                ultimo_nome VARCHAR(15) NOT NULL,
                 data_nascimento DATE,
-                endereco VARCHAR (70),
-                sexo CHAR (1),
-                salario DECIMAL (10,2),
+                endereco VARCHAR(70),
+                sexo CHAR(1),
+                salario DECIMAL(10,2),
                 cpf_supervisor CHAR(11),
                 numero_departamento INT NOT NULL,
                 PRIMARY KEY (cpf)
 );
 COMMENT ON TABLE funcionarios IS 'Tabela que contém os dados dos funcionários';
-COMMENT ON COLUMN funcionários.cpf IS 'CPF do funcionário';
-COMMENT ON COLUMN funcionários.primeiro_nome IS 'Primeiro nome do funcionário';
-COMMENT ON COLUMN funcionários.nome_meio IS 'Nome do meio do funcionário';
-COMMENT ON COLUMN funcionários.ultimo_nome IS 'Último nome do funcionário';
-COMMENT ON COLUMN funcionários.data_nascimento IS 'Data de nascimento do funcionário';
-COMMENT ON COLUMN funcionários.endereco IS 'Local em que o funcionário reside';
-COMMENT ON COLUMN funcionários.sexo IS 'Qual a identidade do sexual do funcionário';
-COMMENT ON COLUMN funcionários.salario IS '0 salário do funcionário';
-COMMENT ON COLUMN funcionários.cpf_supervisor IS 'CPF do supervisor desse funcionário';
-COMMENT ON COLUMN funcionários.numero_departamento IS 'Número do departamento em que o funcionário trabalha';
+COMMENT ON COLUMN funcionarios.cpf IS 'CPF do funcionário';
+COMMENT ON COLUMN funcionarios.primeiro_nome IS 'Primeiro nome do funcionário';
+COMMENT ON COLUMN funcionarios.nome_meio IS 'Nome do meio do funcionário';
+COMMENT ON COLUMN funcionarios.ultimo_nome IS 'Último nome do funcionário';
+COMMENT ON COLUMN funcionarios.data_nascimento IS 'Data de nascimento do funcionário';
+COMMENT ON COLUMN funcionarios.endereco IS 'Local em que o funcionário reside';
+COMMENT ON COLUMN funcionarios.sexo IS 'Qual a identidade do sexual do funcionário';
+COMMENT ON COLUMN funcionarios.salario IS '0 salário do funcionário';
+COMMENT ON COLUMN funcionarios.cpf_supervisor IS 'CPF do supervisor desse funcionário';
+COMMENT ON COLUMN funcionarios.numero_departamento IS 'Número do departamento em que o funcionário trabalha';
 
 /* script para a criação da tabela "departamento" e comentários */
 CREATE TABLE departamento (
