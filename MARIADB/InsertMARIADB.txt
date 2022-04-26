@@ -19,7 +19,7 @@ INSERT INTO dependente (cpf_funcionario, nome_dependente, sexo, data_nascimento,
 ('98765432168', 'Antonio', 'M', '1942-02-28', 'Marido');
 
 
-INSERT INTO departamento (numero_departamento, nome_departamento, data_inicio gerente, cpf_gerente) VALUES
+INSERT INTO departamento (numero_departamento, nome_departamento, data_inicio_gerente, cpf_gerente) VALUES
 (1, 'Matriz', '1981-06-19', '88866555576'),
 (4, 'Administração', '1995-01-01', '98765432168'),
 (5, 'Pesquisa', '1998-05-22', '33344555587');
@@ -36,7 +36,7 @@ INSERT INTO localizacoes_departamento (local, numero_departamento) VALUES
 INSERT INTO projeto (nome_projeto, numero_projeto, local_projeto, numero_departamento) VALUES
 ('ProdutoX', 1, 'Santo André', 5),
 ('ProdutoY', 2, 'Itu', 5),
-('Produtoz', 3, 'São Paulo', 5),
+('ProdutoZ', 3, 'São Paulo', 5),
 ('Informatização', 10, 'Mauá', 4),
 ('Reorganização', 20, 'São Paulo', 1),
 ('Novosbeneficios', 30, 'Mauá', 4);
