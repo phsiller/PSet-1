@@ -24,8 +24,7 @@ INSERT INTO dependente (cpf_funcionario, nome_dependente, sexo, data_nascimento,
 /* Script para inserção de dados para a tabela "departamento"*/
 INSERT INTO departamento (numero_departamento, nome_departamento, data_inicio_gerente, cpf_gerente) VALUES
 (1, 'Matriz', '1981-06-19', '88866555576'),
-(4, 'Administração', '1995-01-01',
-'98765432168'),
+(4, 'Administração', '1995-01-01','98765432168'),
 (5, 'Pesquisa', '1998-05-22', '33344555587');
 
 
@@ -44,7 +43,7 @@ INSERT INTO projeto (nome_projeto, numero_projeto, local_projeto, numero_departa
 ('ProdutoY', 2, 'Itu', 5),
 ('Produtoz', 3, 'São Paulo', 5),
 ('Informatização', 10, 'Mauá', 4),
-('Reorganização ', 20, 'São Paulo', 1),
+('Reorganização', 20, 'São Paulo', 1),
 ('Novosbeneficios', 30, 'Mauá', 4);
 
 
