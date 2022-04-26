@@ -1,7 +1,7 @@
 /* Criando o banco de dados 'uvv' pelo usuário do Postgres. */
 CREATE DATABASE uvv WITH OWNER = phsiller TEMPLATE = template0 ENCODING = UTF8 LC_COLLATE = 'pt_BR.UTF-8' LC_CTYPE = 'pt_BR.UTF-8' ALLOW_CONNECTIONS = true;
 
-/* Logando no usuário 'phsiller' com a senha '212530' para realizar a criação do schema. */
+/* Logando com o usuário 'phsiller' para criar o schema com a senha '212530' */
 CREATE SCHEMA elmasri;
 ALTER USER phsiller
 SET SEARCH_PATH TO elmasri, "$user", public;
