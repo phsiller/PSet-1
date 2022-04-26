@@ -14,6 +14,9 @@
 <b>CriacaoBdMARIADB.txt: Arquivo que contém o código para criação do BD.</b> <br>
 <b>ScriptSQLMARIADB.txt: Arquivo que contém os comandos de SQL para a criação de tabelas no MARIADB.</b> <br>
 <b>InsertMARIADB.txt: Arquivo que contém os comandos de SQL para inserção de dados no BD.</b> <br>
+ ## Atenção:
+<b>Os arquivos "ScriptSQLMARIADB.txt" e "PostgreSQLScript.txt" contém um comentário importante marcando divisórias para copiar o código. É muito importante que o código seja copiado em duas partes, divididas pelos comentários especificados.
+Se o código não for copiado em duas partes diferentes, é possível que o código fique embaralhado, por ser muito grande. Nesse caso o SGBD ignora as partes embaralhadas.</b><br>
  #### Nome do professor: Abrantes
  #### Monitoria: Não tive ajuda de monitores
 ## Feito por Pedro Henrique Siller Gratz
