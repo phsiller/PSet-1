@@ -5,10 +5,10 @@ CREATE TABLE funcionarios (
                 nome_meio CHAR(1) COMMENT 'Nome do meio do funcionário',
                 ultimo_nome VARCHAR(15) NOT NULL COMMENT 'Último nome do funcionário',
                 data_nascimento DATE COMMENT 'Data de nascimento do funcionário',
-                endereco VARCHAR (70) COMMENT 'Local em que o funcionário reside',
-                sexo CHAR (1) COMMENT 'Qual a identidade do sexual do funcionário',
-                salario DECIMAL (10,2) COMMENT 'O salário do funcionário',
-                cpf_supervisor CHAR(11) COMMENT CPF do supervisor desse funcionário',
+                endereco VARCHAR(70) COMMENT 'Local em que o funcionário reside',
+                sexo CHAR(1) COMMENT 'Qual a identidade do sexual do funcionário',
+                salario DECIMAL(10,2) COMMENT 'O salário do funcionário',
+                cpf_supervisor CHAR(11) COMMENT 'CPF do supervisor desse funcionário',
                 numero_departamento INT NOT NULL COMMENT 'Número do departamento em que o funcionário trabalha',
                 PRIMARY KEY (cpf)
 )COMMENT = 'Tabela que contém os dados dos funcionários';
