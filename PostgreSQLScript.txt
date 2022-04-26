@@ -71,7 +71,7 @@ CREATE TABLE trabalha_em (
                 horas DECIMAL(3,1) NOT NULL,
                 PRIMARY KEY (cpf_funcionario, numero_projeto)
 );
-COMMENT ON TABLE trabalha_em IS 'Tabela contendo informações sobre o funcionário e o projeto em que trabalha'
+COMMENT ON TABLE trabalha_em IS 'Tabela contendo informações sobre o funcionário e o projeto em que trabalha';
 COMMENT ON COLUMN trabalha_em.cpf_funcionario IS 'CPF do funcionário';
 COMMENT ON COLUMN trabalha_em.numero_projeto IS 'Nome do projeto em que o funcionário trabalha';
 COMMENT ON COLUMN trabalha_em.horas IS 'Carga horária de trabalho do funcionário';
