@@ -1,2 +1,3 @@
+/* criando o banco de dados no MARIADB */
 CREATE DATABASE uvv CHARSET = UTF8 COLLATE = utf8_general_ci;
 USE uvv;
