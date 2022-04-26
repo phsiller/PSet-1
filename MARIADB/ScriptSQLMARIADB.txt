@@ -110,6 +110,7 @@ ON UPDATE NO ACTION;
 /* CRIANDO UMA CONSTRAINT PARA VERIFICAR SE O VALOR INSERIDO PARA 'sexo' ESTÁ CORRETO */
 ALTER TABLE funcionarios ADD CONSTRAINT C_sexo_funcionario
 CHECK (sexo='M' or sexo='F' or sexo='m' or sexo='f');
+
 ALTER TABLE dependente ADD CONSTRAINT c_sexo_dependente
 CHECK (sexo='M' or sexo='F' or sexo='m' or sexo='f');
 
