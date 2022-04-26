@@ -1,4 +1,4 @@
-/* CRIANDOA TABELA DE FUNCIONÁRIOS */
+/* CRIANDO A TABELA DE FUNCIONÁRIOS */
 CREATE TABLE funcionarios (
                 cpf CHAR(11) NOT NULL COMMENT 'CPF do funcionário',
                 primeiro_nome VARCHAR(15) NOT NULL COMMENT 'Primeiro nome do funcionário',
@@ -12,7 +12,6 @@ CREATE TABLE funcionarios (
                 numero_departamento INT NOT NULL COMMENT 'Número do departamento em que o funcionário trabalha',
                 PRIMARY KEY (cpf)
 )COMMENT = 'Tabela que contém os dados dos funcionários';
-
 
 
 /* CRIANDO A TABELA DE DEPARTAMENTO */
