@@ -61,7 +61,7 @@ CREATE TABLE dependente (
                 data_nascimento DATE COMMENT 'Data de nascimento do dependente',
                 parentesco VARCHAR(15) COMMENT 'Tipo de parentesco entre o funcionário e o dependente',
                 PRIMARY KEY (cpf_funcionario, nome_dependente)
-)COMMENT = 'Tabela contendo informações sobre o funcionário e o projeto em que trabalha';
+)COMMENT = 'Tabela que contém informações sobre os dependentes dos funcionários';
 
 
 /* CRIANDO RESTRIÇÕES PARA CHAVES PRIMÁRIAS E ESTRANGEIRAS */
