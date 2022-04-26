@@ -55,10 +55,12 @@ CREATE TABLE trabalha_em (
 
 /* CRIANDO A TABELA DOS DEPENDENTES DOS FUNCIONÁRIOS */
 CREATE TABLE dependente (
-                cpf_funcionario CHAR(11) NOT NULL COMMENT 'CPF do funcionário',
-                numero_projeto INT NOT NULL COMMENT 'Nome do projeto em que o funcionário trabalha',
-                horas DECIMAL (3,1) NOT NULL COMMENT 'Carga horária de trabalho do funcionário',
-                PRIMARY KEY (cpf_funcionario, numero_projeto)
+                cpf_funcionario CHAR(11) NOT NULL COMMENT 'CPF do funcionário que trabalha na empresa',
+                nome_dependente VARCHAR(15) NOT NULL COMMENT 'Nome do dependente do funcionário',
+                sexo CHAR(1) COMMENT 'Qual a identidade do sexual do dependente',
+                data_nascimento DATE COMMENT 'Data de nascimento do dependente',
+                parentesco VARCHAR(15) COMMENT 'Tipo de parentesco entre o funcionário e o dependente',
+                PRIMARY KEY (cpf_funcionario, nome_dependente)
 )COMMENT = 'Tabela contendo informações sobre o funcionário e o projeto em que trabalha';
 
 
