@@ -27,8 +27,8 @@ COMMENT ON COLUMN funcionarios.numero_departamento IS 'Número do departamento e
 /* script para a criação da tabela "departamento" e comentários */
 CREATE TABLE departamento (
                 numero_departamento INT NOT NULL,
-                nome_departamento VARCHAR (15) NOT NULL,
-                cpf_gerente CHAR (11) NOT NULL,
+                nome_departamento VARCHAR(15) NOT NULL,
+                cpf_gerente CHAR(11) NOT NULL,
                 data_inicio gerente DATE,
                 PRIMARY KEY (numero_departamento),
                 UNIQUE (cpf_gerente),
@@ -53,7 +53,7 @@ COMMENT ON COLUMN localizacoes_departamento.local IS 'Onde o departamento está 
 /* script para a criação da tabela "projeto" e comentários */
 CREATE TABLE projeto (
                 numero_projeto INT NOT NULL,
-                nome_projeto VARCHAR (15) NOT NULL,
+                nome_projeto VARCHAR(15) NOT NULL,
                 local_projeto VARCHAR(45),
                 numero_departamento INT NOT NULL,
                 PRIMARY KEY (numero_projeto)
@@ -80,9 +80,9 @@ COMMENT ON COLUMN trabalha_em.horas IS 'Carga horária de trabalho do funcionár
 CREATE TABLE dependente (
                 cpf_funcionario CHAR(11) NOT NULL,
                 nome_dependente VARCHAR(15) NOT NULL,
-                sexo CHAR (1),
+                sexo CHAR(1),
                 data_nascimento DATE,
-                parentesco VARCHAR (15),
+                parentesco VARCHAR(15),
                 PRIMARY KEY (cpf_funcionario, nome_dependente)
 );
 COMMENT ON TABLE dependente IS 'Tabela que contém informações sobre os dependentes dos funcionários';
@@ -137,6 +137,7 @@ ON UPDATE NO ACTION;
 
 ALTER TABLE funcionarios ADD CONSTRAINT C_sexo_funcionario
 CHECK (sexo='M' or sexo='F' or sexo='m' or sexo='f');
+
 ALTER TABLE dependente ADD CONSTRAINT C_sexo_dependente
 CHECK (sexo='M' or sexo='F' or sexo='m' or sexo='f');
 
