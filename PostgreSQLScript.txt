@@ -1,16 +1,16 @@
 /* script para a criação da tabela "funcionários" e comentários */
 CREATE TABLE funcionarios (
-cpf CHAR(11) NOT NULL,
-primeiro_nome VARCHAR(15) NOT NULL,
-nome_meio CHAR(1),
-ultimo_nome VARCHAR(15) NOT NULL,
-data_nascimento DATE,
-endereco VARCHAR(70),
-sexo CHAR(1),
-salario DECIMAL(10,2),
-cpf_supervisor CHAR(11),
-numero_departamento INT NOT NULL,
-PRIMARY KEY (cpf)
+              cpf CHAR(11) NOT NULL,
+              primeiro_nome VARCHAR(15) NOT NULL,
+              nome_meio CHAR(1),
+              ultimo_nome VARCHAR(15) NOT NULL,
+              data_nascimento DATE,
+              endereco VARCHAR(70),
+              sexo CHAR(1),
+              salario DECIMAL(10,2),
+              cpf_supervisor CHAR(11),
+              numero_departamento INT NOT NULL,
+              PRIMARY KEY (cpf)
 );
 COMMENT ON TABLE funcionarios IS 'Tabela que contém os dados dos funcionários';
 COMMENT ON COLUMN funcionarios.cpf IS 'CPF do funcionário';
@@ -26,13 +26,13 @@ COMMENT ON COLUMN funcionarios.numero_departamento IS 'Número do departamento e
 
 /* script para a criação da tabela "departamento" e comentários */
 CREATE TABLE departamento (
-numero_departamento INT NOT NULL,
-nome_departamento VARCHAR(15) NOT NULL,
-cpf_gerente CHAR(11) NOT NULL,
-data_inicio gerente DATE,
-PRIMARY KEY (numero_departamento),
-UNIQUE (cpf_gerente),
-UNIQUE (nome_departamento)
+              numero_departamento INT NOT NULL,
+              nome_departamento VARCHAR(15) NOT NULL,
+              cpf_gerente CHAR(11) NOT NULL,
+              data_inicio gerente DATE,
+              PRIMARY KEY (numero_departamento),
+              UNIQUE (cpf_gerente),
+              UNIQUE (nome_departamento)
 );
 COMMENT ON TABLE departamento IS 'Tabela que contém informações sobre os departamentos';
 COMMENT ON COLUMN departamento.numero_departamento IS 'Número do departamento';
@@ -42,9 +42,9 @@ COMMENT ON COLUMN departamento.data_inicio_gerente IS 'Data em que o gerente com
 
 /* script para a criação da tabela "localizacoes_departamento" e comentários */
 CREATE TABLE localizacoes_departamento (
-numero_departamento INT NOT NULL,
-local VARCHAR(45) NOT NULL,
-PRIMARY KEY (numero_departamento, local)
+              numero_departamento INT NOT NULL,
+              local VARCHAR(45) NOT NULL,
+              PRIMARY KEY (numero_departamento, local)
 );
 COMMENT ON TABLE localizacoes_departamento IS 'Tabela que contém os dados das localizações dos departamentos';
 COMMENT ON COLUMN localizacoes_departamento.numero_departamento IS 'Número do departamento';
@@ -52,11 +52,11 @@ COMMENT ON COLUMN localizacoes_departamento.local IS 'Onde o departamento está 
 
 /* script para a criação da tabela "projeto" e comentários */
 CREATE TABLE projeto (
-numero_projeto INT NOT NULL,
-nome_projeto VARCHAR(15) NOT NULL,
-local_projeto VARCHAR(45),
-numero_departamento INT NOT NULL,
-PRIMARY KEY (numero_projeto)
+              numero_projeto INT NOT NULL,
+              nome_projeto VARCHAR(15) NOT NULL,
+              local_projeto VARCHAR(45),
+              numero_departamento INT NOT NULL,
+              PRIMARY KEY (numero_projeto)
 );
 COMMENT ON TABLE projeto IS 'Tabela que contém informações sobre os projetos';
 COMMENT ON COLUMN projeto.numero_projeto IS 'Número do projeto';
@@ -66,10 +66,10 @@ COMMENT ON COLUMN projeto.numero_departamento IS 'Número do departamento em que
 
 /* script para a criação da tabela "trabalha_em" e comentários */
 CREATE TABLE trabalha_em (
-cpf_funcionario CHAR(11) NOT NULL,
-numero_projeto INT NOT NULL,
-horas DECIMAL(3,1) NOT NULL,
-PRIMARY KEY (cpf_funcionario, numero_projeto)
+              cpf_funcionario CHAR(11) NOT NULL,
+              numero_projeto INT NOT NULL,
+              horas DECIMAL(3,1) NOT NULL,
+              PRIMARY KEY (cpf_funcionario, numero_projeto)
 );
 COMMENT ON TABLE trabalha_em IS 'Tabela contendo informações sobre o funcionário e o projeto em que trabalha';
 COMMENT ON COLUMN trabalha_em.cpf_funcionario IS 'CPF do funcionário';
@@ -78,12 +78,12 @@ COMMENT ON COLUMN trabalha_em.horas IS 'Carga horária de trabalho do funcionár
 
 /* script para a criação da tabela "dependente" e comentários */
 CREATE TABLE dependente (
-cpf_funcionario CHAR(11) NOT NULL,
-nome_dependente VARCHAR(15) NOT NULL,
-sexo CHAR(1),
-data_nascimento DATE,
-parentesco VARCHAR(15),
-PRIMARY KEY (cpf_funcionario, nome_dependente)
+             cpf_funcionario CHAR(11) NOT NULL,
+             nome_dependente VARCHAR(15) NOT NULL,
+             sexo CHAR(1),
+             data_nascimento DATE,
+             parentesco VARCHAR(15),
+             PRIMARY KEY (cpf_funcionario, nome_dependente)
 );
 COMMENT ON TABLE dependente IS 'Tabela que contém informações sobre os dependentes dos funcionários';
 COMMENT ON COLUMN dependente.cpf_funcionario IS 'CPF do funcionário que trabalha na empresa';
@@ -91,6 +91,20 @@ COMMENT ON COLUMN dependente.nome_dependente IS 'Nome do dependente do funcioná
 COMMENT ON COLUMN dependente.sexo IS 'Qual a identidade do sexual do dependente';
 COMMENT ON COLUMN dependente.data_nascimento IS 'Data de nascimento do dependente';
 COMMENT ON COLUMN dependente.parentesco IS 'Tipo de parentesco entre o funcionário e o dependente';
+
+
+/* '''''''''''''''''''''''''' PARE DE COPIAR A PARTIR DESTE PONTO''''''''''''''''''''''''''''''
+
+
+
+
+
+
+
+
+
+  ''''''''''''''''''''''''''''VOLTE A COPIAR A PARTIR DOS CÓDIGOS ABAIXO''''''''''''''''''''' */
+
 
 /* adicionando relacionamentos e constraints */
 ALTER TABLE funcionarios ADD CONSTRAINT funcionarios_funcionarios_fk
@@ -137,6 +151,7 @@ ON UPDATE NO ACTION;
 
 ALTER TABLE funcionarios ADD CONSTRAINT C_sexo_funcionario
 CHECK (sexo='M' or sexo='F' or sexo='m' or sexo='f');
+
 ALTER TABLE dependente ADD CONSTRAINT C_sexo_dependente
 CHECK (sexo='M' or sexo='F' or sexo='m' or sexo='f');
 
