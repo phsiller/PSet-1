@@ -47,3 +47,12 @@ SELECT DISTINCT CONCAT(f.primeiro_nome, ' ', f.nome_meio, ' ', f.ultimo_nome) AS
 CONCAT('R$ ', CAST((f.salario) AS DECIMAL(10,2))) AS Salário FROM funcionarios f
 INNER JOIN departamento dto INNER JOIN dependente dpd
 WHERE dto.numero_departamento = f.numero_departamento AND f.cpf NOT IN (SELECT dpd.cpf_funcionario FROM dependente dpd);
+
+
+/* Questão 08 */
+SELECT d.nome_departamento AS Departamento, p.nome_projeto AS Projeto,
+CONCAT(f.primeiro_nome, ' ', f.nome_meio, ' ', f.ultimo_nome) AS Nome_completo, t.horas AS Horas
+FROM funcionarios f INNER JOIN departamento d INNER JOIN projeto p INNER JOIN trabalha_em t WHERE d.numero_departamento = f.numero_departamento
+AND p.numero_projeto = t.numero_projeto AND f.cpf = t.cpf_funcionario
+ORDER BY p.numero_projeto;
+
