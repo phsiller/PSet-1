@@ -1,27 +1,27 @@
 /* Questão 01 */
-SELECT nome_departamento AS Departamento, CONCAT('R$ ', CAST(AVG(salario) AS DECIMAL(10,2))) AS Média_salarial FROM funcionario f INNER JOIN departamento d
+SELECT nome_departamento AS Departamento, CONCAT('R$ ', CAST(AVG(salario) AS DECIMAL(10,2))) AS Média_salarial FROM funcionarios f INNER JOIN departamento d
 WHERE f.numero_departamento = d.numero_departamento GROUP BY nome_departamento;
 
 
 /* Questão 02 */
 SELECT CASE WHEN sexo = 'M' THEN 'Masculino' WHEN sexo = 'm' THEN 'Masculino' WHEN sexo = 'F' THEN 'Feminino' WHEN sexo = 'f' THEN 'Feminino' END AS Sexo,
-CONCAT('R$ ', CAST(AVG(salario) AS DECIMAL(10,2))) AS Média_salarial FROM funcionario GROUP BY Sexo;
+CONCAT('R$ ', CAST(AVG(salario) AS DECIMAL(10,2))) AS Média_salarial FROM funcionarios GROUP BY Sexo;
 
 
 /* Questão 03 */
 SELECT nome_departamento AS Departamento, CONCAT(f.primeiro_nome, ' ', f.nome_meio, ' ', f.ultimo_nome) AS Nome_completo,
 data_nascimento AS Data_de_nascimento,
 FLOOR(DATEDIFF(CURDATE(), data_nascimento)/325.25) AS Idade,
-CONCAT('R$ ', CAST((salario) AS DECIMAL(10,2))) AS Salário FROM funcionario f INNER JOIN departamento d WHERE f.numero_departamento = d.numero_departamento
+CONCAT('R$ ', CAST((salario) AS DECIMAL(10,2))) AS Salário FROM funcionarios f INNER JOIN departamento d WHERE f.numero_departamento = d.numero_departamento
 ORDER BY nome_departamento;
 
 
 /* Questão 04 */
 SELECT CONCAT(f.primeiro_nome, ' ', f.nome_meio, ' ', f.ultimo_nome) AS Nome_completo, FLOOR(DATEDIFF(CURDATE(), data_nascimento)/365.25) AS Idade, 
-CONCAT('R$ ', CAST((salario) AS DECIMAL(10,2))) AS Salário, CONCAT('R$ ', CAST((salario*1.2) AS DECIMAL(10,2))) AS Novo_salário FROM funcionario f 
+CONCAT('R$ ', CAST((salario) AS DECIMAL(10,2))) AS Salário, CONCAT('R$ ', CAST((salario*1.2) AS DECIMAL(10,2))) AS Novo_salário FROM funcionarios f 
 WHERE salario < '35000' UNION
 SELECT CONCAT(f.primeiro_nome, ' ', f.nome_meio, ' ', f.ultimo_nome) AS Nome_completo, FLOOR(DATEDIFF(CURDATE(), data_nascimento)/365.25) AS Idade, 
-CONCAT('R$ ', CAST((salario) AS DECIMAL(10,2))) AS Salário, CONCAT('R$ ', CAST((salario*1.15) AS DECIMAL(10,2))) AS Novo_salário FROM funcionario f
+CONCAT('R$ ', CAST((salario) AS DECIMAL(10,2))) AS Salário, CONCAT('R$ ', CAST((salario*1.15) AS DECIMAL(10,2))) AS Novo_salário FROM funcionarios f
 WHERE salario >= '35000';
 
 
@@ -38,5 +38,12 @@ SELECT CONCAT(f.primeiro_nome, ' ', f.nome_meio, ' ', f.ultimo_nome) AS Nome_com
 dpd.nome_dependente AS Dependente, FLOOR(DATEDIFF(CURDATE(), dpd.data_nascimento)/365.25) AS Idade_dependente,
 CASE WHEN dpd.sexo = 'M' THEN 'Masculino' WHEN dpd.sexo = 'm' THEN 'Masculino' WHEN dpd.sexo = 'F' THEN 'Feminino' WHEN dpd.sexo = 'f' THEN 'Feminino'
 END AS Sexo_dependente
-FROM funcionario f INNER JOIN departamento dto ON f.numero_departamento = dto.numero_departamento
+FROM funcionarios f INNER JOIN departamento dto ON f.numero_departamento = dto.numero_departamento
 INNER JOIN dependente dpd ON dpd.cpf_funcionario = f.cpf;
+
+
+/* QUESTÃO 07 */
+SELECT DISTINCT CONCAT(f.primeiro_nome, ' ', f.nome_meio, ' ', f.ultimo_nome) AS Nome_completo, dto.nome_departamento AS Departamento,
+CONCAT('R$ ', CAST((f.salario) AS DECIMAL(10,2))) AS Salário FROM funcionarios f
+INNER JOIN departamento dto INNER JOIN dependente dpd
+WHERE dto.numero_departamento = f.numero_departamento AND f.cpf NOT IN (SELECT dpd.cpf_funcionario FROM dependente dpd);
