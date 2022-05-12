@@ -76,10 +76,23 @@ CONCAT('R$ ', CAST((t.horas*50) AS DECIMAL (10,2))) AS Recebimento FROM funciona
 WHERE f.cpf = t.cpf_funcionario AND p.numero_projeto = t.numero_projeto GROUP BY f.primeiro_nome;
 
 
+/* QUESTÃO 12 */
+SELECT d.nome_departamento AS Departamento, p.nome_projeto AS Projeto,
+CONCAT(f.primeiro_nome, ' ', f.nome_meio, ' ', f.ultimo_nome) AS Nome_completo, t.horas AS Horas
+FROM funcionarios f INNER JOIN departamento d INNER JOIN projeto p INNER JOIN trabalha_em t
+WHERE f.cpf = t.cpf_funcionario AND p.numero_projeto = t.numero_projeto AND (t.horas = 0 OR t.horas = NULL) GROUP BY f.primeiro_nome;
 
 
-
-
+/* QUESTÃO 13 */
+SELECT CONCAT(f.primeiro_nome, ' ', f.nome_meio, ' ', f.ultimo_nome) AS Nome,
+CASE WHEN sexo = 'M' THEN 'Masculino' WHEN sexo = 'm' THEN 'Masculino'
+WHEN sexo = 'F' THEN 'Feminino' WHEN sexo = 'f' THEN 'Feminino' END AS Sexo,
+FLOOR(DATEDIFF(CURDATE(), f.data_nascimento)/365.25) AS Idade FROM funcionarios f
+UNION
+SELECT d.nome_dependente AS Nome,
+CASE WHEN sexo = 'M' THEN 'Masculino' WHEN sexo = 'm' THEN 'Masculino'
+WHEN sexo = 'F' THEN 'Feminino' WHEN sexo = 'f' THEN 'Feminino' END AS Sexo,
+FLOOR(DATEDIFF(CURDATE(), d.data_nascimento)/365.25) AS Idade FROM dependente d ORDER BY Idade;
 
 
 
