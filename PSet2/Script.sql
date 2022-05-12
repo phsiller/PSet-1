@@ -70,3 +70,19 @@ FROM departamento d INNER JOIN funcionarios f WHERE d.numero_departamento = f.nu
 GROUP BY d.nome_departamento;
 
 
+/* Questão 11 */
+SELECT CONCAT(f.primeiro_nome, ' ', f.nome_meio, ' ', f.ultimo_nome) AS Nome_completo, p.nome_projeto AS Projeto,
+CONCAT('R$ ', CAST((t.horas*50) AS DECIMAL (10,2))) AS Recebimento FROM funcionarios f INNER JOIN projeto p INNER JOIN trabalha_em t
+WHERE f.cpf = t.cpf_funcionario AND p.numero_projeto = t.numero_projeto GROUP BY f.primeiro_nome;
+
+
+
+
+
+
+
+
+
+
+
+
