@@ -56,3 +56,17 @@ FROM funcionarios f INNER JOIN departamento d INNER JOIN projeto p INNER JOIN tr
 AND p.numero_projeto = t.numero_projeto AND f.cpf = t.cpf_funcionario
 ORDER BY p.numero_projeto;
 
+
+/* Questão 09 */
+SELECT d.nome_departamento AS Departamento, p.nome_projeto AS Projeto, SUM(t.horas) AS Total_de_horas 
+FROM departamento d INNER JOIN projeto p INNER JOIN trabalha_em t WHERE d.numero_departamento = p.numero_departamento
+AND p.numero_projeto = t.numero_projeto
+GROUP BY p.nome_projeto;
+
+
+/* Questão 10 */
+SELECT d.nome_departamento AS Departamento, CONCAT('R$ ', CAST(AVG(f.salario) AS DECIMAL(10,2))) AS Média_salarial
+FROM departamento d INNER JOIN funcionarios f WHERE d.numero_departamento = f.numero_departamento
+GROUP BY d.nome_departamento;
+
+
